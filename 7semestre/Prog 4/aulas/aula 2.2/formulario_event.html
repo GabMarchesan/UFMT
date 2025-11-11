@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width, initial-scale=1.0">
+            <title> Formulário de Inscrição para Evento </title>
+    </head>
+
+    <body>
+        <h1>Formulário de Inscrição para Evento</h1>
+    <form action="submit_form.php" method="POST">
+        
+        <label for="nome">Nome completo:</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required autofocus pattern="^[A-Za-zÀ-ÖØ-öø-ÿ]+\s[A-Za-zÀ-ÖØ-öø-ÿ]+$" aria-required="true">
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="exemplo@gmail.com" required aria-required="true">
+        <br><br>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(XX)99999-9999" pattern="\(\d{2}\)9\d{4}-\d{4}" required aria-required="true">
+        <br><br>
+
+        <label for="data_nascimento">Data de nascimento:</label>
+        <input type="date" id="data_nascimento" name="data_nascimento" required aria-required="true">
+        <br><br>
+
+        <label>Sexo:</label>
+        <input type="radio" id="sexo_m" name="sexo" value="M" required aria-required="true">
+        <label for="sexo_m">Masculino</label>
+        <input type="radio" id="sexo_f" name="sexo" value="F" required aria-required="true">
+        <label for="sexo_f">Feminino</label>
+        <br><br>
+
+        <label for="site">Endereço do site pessoal:</label>
+        <input type="url" id="site" name="site" placeholder="http://www.exemplo.com">
+        <br><br>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required autocomplete="off" placeholder="Senha123@" aria-required="true">
+        <br><br>
+
+        <label for="escolaridade">Escolaridade:</label>
+        <select id="escolaridade" name="escolaridade" required aria-required="true">
+            <option value="">Selecione</option>
+            <option value="fundamental">Ensino Fundamental</option>
+            <option value="medio">Ensino Médio</option>
+            <option value="tecnico">Curso Técnico</option>
+            <option value="superior">Ensino Superior</option>
+            <option value="pos_graduacao">Pós-graduação</option>
+        </select>
+        <br><br>
+
+        <label>Interesses:</label><br>
+        <input type="checkbox" id="interesse1" name="interesses" value="tecnologia">
+        <label for="interesse1">Tecnologia</label><br>
+        <input type="checkbox" id="interesse2" name="interesses" value="esportes">
+        <label for="interesse2">Esportes</label><br>
+        <input type="checkbox" id="interesse3" name="interesses" value="musica">
+        <label for="interesse3">Música</label><br>
+        <input type="checkbox" id="interesse4" name="interesses" value="arte">
+        <label for="interesse4">Arte</label><br>
+        <input type="checkbox" id="interesse5" name="interesses" value="literatura">
+        <label for="interesse5">Literatura</label>
+        <br><br>
+
+        <label for="hora_chegada">Hora de chegada:</label>
+        <input type="time" id="hora_chegada" name="hora_chegada">
+        <br><br>
+
+        <input type="submit" value="Enviar">
+        
+    </form>
+    </body>
+</html>

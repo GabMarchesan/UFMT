@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Músicas Favoritas de {{ username }}{% endblock %}
+
+{% block page_content %}
+<h1>Músicas Favoritas de {{ username }}</h1>
+<div id="favorites-list" class="mt-3"></div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('/favorites')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao carregar músicas favoritas');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const favoritesList = document.getElementById('favorites-list');
+                if (data.length === 0) {
+                    favoritesList.innerHTML = '<p>Nenhuma música favorita encontrada.</p>';
+                } else {
+                    data.forEach(music => {
+                        const musicElement = document.createElement('div');
+                        musicElement.classList.add('card', 'mb-3', 'p-3', 'border-warning');
+                        musicElement.innerHTML = `
+                            <div class="card-body">
+                                <h5 class="card-title">${music.titulo}</h5>
+                                <p class="card-text"><strong>Artistas:</strong> ${music.artistas}</p>
+                                <p class="card-text"><strong>Ano:</strong> ${music.ano || 'N/A'}</p>
+                                ${music.preview_url ? `<a href="${music.preview_url}" target="_blank" class="btn btn-primary mb-2">Ouvir Prévia</a>` : ''}
+                                ${music.poster_url ? `<img src="${music.poster_url}" alt="${music.titulo}" style="max-width: 200px; border-radius: 8px; border: 2px solid #ffd700;">` : ''}
+                            </div>
+                        `;
+                        favoritesList.appendChild(musicElement);
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Ocorreu um erro ao carregar as músicas favoritas.');
+            });
+    });
+</script>
+{% endblock %}

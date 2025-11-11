@@ -1,0 +1,10 @@
+library IEEE; use IEEE.STD_LOGIC_1164.all;
+entity carry_adder is
+  port(a, b, cin: in  STD_LOGIC;
+       s, cout:   out STD_LOGIC);
+end;
+architecture synth of carry_adder is
+  signal p, g: STD_LOGIC;
+begin
+ 
+end synth;

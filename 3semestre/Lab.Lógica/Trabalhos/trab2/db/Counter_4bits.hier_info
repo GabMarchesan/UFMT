@@ -1,0 +1,173 @@
+|Counter_4bits
+CLK => Register_4bits:REG.CLK
+CLK => RippleCarryAdder:ADD.CLK
+RESET => ~NO_FANOUT~
+COUNT_OUT[0] << Register_4bits:REG.Q[0]
+COUNT_OUT[1] << Register_4bits:REG.Q[1]
+COUNT_OUT[2] << Register_4bits:REG.Q[2]
+COUNT_OUT[3] << Register_4bits:REG.Q[3]
+COUNT_OUT[4] << Register_4bits:REG.Q[4]
+COUNT_OUT[5] << Register_4bits:REG.Q[5]
+COUNT_OUT[6] << Register_4bits:REG.Q[6]
+
+
+|Counter_4bits|Register_4bits:REG
+D[0] => FlipFlop_D:FF0.D
+D[1] => FlipFlop_D:FF1.D
+D[2] => FlipFlop_D:FF2.D
+D[3] => FlipFlop_D:FF3.D
+CLK => FlipFlop_D:FF0.CLK
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => FlipFlop_D:FF1.CLK
+CLK => FlipFlop_D:FF2.CLK
+CLK => FlipFlop_D:FF3.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter_4bits|Register_4bits:REG|FlipFlop_D:FF0
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter_4bits|Register_4bits:REG|FlipFlop_D:FF1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter_4bits|Register_4bits:REG|FlipFlop_D:FF2
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter_4bits|Register_4bits:REG|FlipFlop_D:FF3
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter_4bits|RippleCarryAdder:ADD
+A[0] => FullAdder:FA0.A
+A[1] => FullAdder:FA1.A
+A[2] => FullAdder:FA2.A
+A[3] => FullAdder:FA3.A
+B[0] => FullAdder:FA0.B
+B[1] => FullAdder:FA1.B
+B[2] => FullAdder:FA2.B
+B[3] => FullAdder:FA3.B
+CLK => ~NO_FANOUT~
+SUM[0] <= FullAdder:FA0.SUM
+SUM[1] <= FullAdder:FA1.SUM
+SUM[2] <= FullAdder:FA2.SUM
+SUM[3] <= FullAdder:FA3.SUM
+CARRY_OUT <= FullAdder:FA3.COUT
+
+
+|Counter_4bits|RippleCarryAdder:ADD|FullAdder:FA0
+A => SUM.IN0
+A => COUT.IN0
+A => COUT.IN0
+B => SUM.IN1
+B => COUT.IN1
+B => COUT.IN0
+CIN => SUM.IN1
+CIN => COUT.IN1
+CIN => COUT.IN1
+SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter_4bits|RippleCarryAdder:ADD|FullAdder:FA1
+A => SUM.IN0
+A => COUT.IN0
+A => COUT.IN0
+B => SUM.IN1
+B => COUT.IN1
+B => COUT.IN0
+CIN => SUM.IN1
+CIN => COUT.IN1
+CIN => COUT.IN1
+SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter_4bits|RippleCarryAdder:ADD|FullAdder:FA2
+A => SUM.IN0
+A => COUT.IN0
+A => COUT.IN0
+B => SUM.IN1
+B => COUT.IN1
+B => COUT.IN0
+CIN => SUM.IN1
+CIN => COUT.IN1
+CIN => COUT.IN1
+SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter_4bits|RippleCarryAdder:ADD|FullAdder:FA3
+A => SUM.IN0
+A => COUT.IN0
+A => COUT.IN0
+B => SUM.IN1
+B => COUT.IN1
+B => COUT.IN0
+CIN => SUM.IN1
+CIN => COUT.IN1
+CIN => COUT.IN1
+SUM <= SUM.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= COUT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter_4bits|decodificador:DEC
+E[0] => Mux0.IN19
+E[0] => Mux1.IN19
+E[0] => Mux2.IN19
+E[0] => Mux3.IN19
+E[0] => Mux4.IN19
+E[0] => Mux5.IN19
+E[0] => Mux6.IN19
+E[1] => Mux0.IN18
+E[1] => Mux1.IN18
+E[1] => Mux2.IN18
+E[1] => Mux3.IN18
+E[1] => Mux4.IN18
+E[1] => Mux5.IN18
+E[1] => Mux6.IN18
+E[2] => Mux0.IN17
+E[2] => Mux1.IN17
+E[2] => Mux2.IN17
+E[2] => Mux3.IN17
+E[2] => Mux4.IN17
+E[2] => Mux5.IN17
+E[2] => Mux6.IN17
+E[3] => Mux0.IN16
+E[3] => Mux1.IN16
+E[3] => Mux2.IN16
+E[3] => Mux3.IN16
+E[3] => Mux4.IN16
+E[3] => Mux5.IN16
+E[3] => Mux6.IN16
+y[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+y[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+y[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+y[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

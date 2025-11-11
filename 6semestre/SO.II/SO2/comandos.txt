@@ -1,0 +1,46 @@
+=======================================================================================
+
+PARA COMPILAR (ARQ.C)
+
+riscv64-linux-gnu-gcc -c arquivoMain.c -o arquivoMain.o
+
+------------------------------------------------
+
+PARA COMPILAR (ARQ.S) quando utiliza .c
+
+riscv64-linux-gnu-gcc -c arquivo.s -o arquivo.o
+
+------------------------------------------------
+
+PARA JUNTAR OS .O (DO QRV.S E .C)
+riscv64-linux-gnu-gcc -static arquivoMain.o arquivo.o -o arquivoFinal.x
+
+------------------------------------------------
+
+PRA EXECUTAR (ARQ .X)
+
+qemu-riscv64-static arquivo.x
+
+=======================================================================================
+
+PARA COMPILAR (ARQ.S) quando  NÃO utiliza .c
+
+riscv64-linux-gnu-ln arquivo.s -o arquivo.o
+
+------------------------------------------------
+
+PARA TRANFORMAR .O EM .X
+riscv64-linux-gnu-ld arquivo.o -o arquivo.x
+
+------------------------------------------------
+
+PRA EXECUTAR (ARQ .X)
+
+qemu-riscv64-static arquivo.x
+
+
+
+==========================================================================================
+//PARA RODAR O MAKEFILE//
+
+

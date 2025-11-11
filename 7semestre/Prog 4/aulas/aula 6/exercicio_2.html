@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface com Abas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #abedbb;
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #0b0202;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #81db7f;
+            margin-right: 2px;
+            border-radius: 5px 5px 0 0;
+        }
+        .tab.active {
+            background-color: #15b315; /*Cor botão*/
+            border-bottom: 2px solid #040000;
+        }
+        .content {
+            padding: 20px;
+            background-color: #ffffff;
+            border: 2px solid #090000;
+            border-top: none;
+            border-radius: 0 5px 5px 5px;
+        }
+        .content-panel {
+            display: none;
+        }
+        .content-panel.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tabs">
+        <div class="tab active" data-tab="tab1">Aba 1 - Taylor swith</div>
+        <div class="tab" data-tab="tab2">Aba 2 - The eras tour</div>
+        <div class="tab" data-tab="tab3">Aba 3 - Reputation</div>
+    </div>
+
+    <div class="content">
+        <div id="tab1" class="content-panel active">
+            <h2>Conteúdo da Aba 1</h2>
+            <p>Taylor a rainha da industria musical do momento!!!</p>
+        </div>
+        <div id="tab2" class="content-panel">
+            <h2>Conteúdo da Aba 2</h2>
+            <p>A maior turne mundial do momento, quebrando todos os recordes!!!</p>
+        </div>
+        <div id="tab3" class="content-panel">
+            <h2>Conteúdo da Aba 3</h2>
+            <p>Melhor albúm de todos os tempos!!!</p>
+        </div>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const panels = document.querySelectorAll('.content-panel');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove a classe 'active' de todas as abas e painéis
+                tabs.forEach(t => t.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+
+                // Adiciona a classe 'active' à aba clicada e ao painel correspondente
+                tab.classList.add('active');
+                const panelId = tab.getAttribute('data-tab');
+                document.getElementById(panelId).classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+</html>

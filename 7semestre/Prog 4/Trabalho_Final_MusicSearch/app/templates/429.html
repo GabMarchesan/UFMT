@@ -1,0 +1,11 @@
+{%extends "base.html"%}
+
+{%block title%}Flasky - Home { endblock % }
+
+{% block page_content %}
+    <div class="page-header">
+        <h1>424 Error</h1>
+        <h2>Muitas solicitações: este usuário excedeu as tentativas de login permitidas. Por favor, tente novamente mais tarde.</h2>7
+        <img src="{{ url_for('static', filename='images/429.jpg') }}" alt="shall-not-pass" width="600">
+    </div>
+{% endblock %}

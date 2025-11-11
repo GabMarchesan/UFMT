@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balão Inflável</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-size: 50px; /* Tamanho inicial do balão */
+        }
+        #balao {
+            font-size: inherit;
+            transition: font-size 0.2s ease;
+        }
+        #reiniciar {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            display: none; /* Escondido inicialmente */
+        }
+    </style>
+</head>
+<body>
+    <div id="balao">🎈</div>
+    <button id="reiniciar">Reiniciar Balão</button>
+
+    <script>
+        const balao = document.getElementById('balao');
+        const botaoReiniciar = document.getElementById('reiniciar');
+        let tamanhoAtual = 50; // Tamanho inicial do balão em pixels
+        const maxTamanho = 300; // Tamanho máximo antes de explodir
+
+        function inflarBalao() {
+            if (tamanhoAtual >= maxTamanho) {
+                explodirBalao();
+            } else {
+                tamanhoAtual *= 1.1; // Aumenta o tamanho em 10%
+                balao.style.fontSize = `${tamanhoAtual}px`;
+            }
+        }
+
+        function desinflarBalao() {
+            tamanhoAtual *= 0.9; // Diminui o tamanho em 10%
+            balao.style.fontSize = `${tamanhoAtual}px`;
+        }
+
+        function explodirBalao() {
+            balao.textContent = '💥'; // Substitui o balão pela explosão
+            document.removeEventListener('keydown', controlarBalao); // Remove o manipulador de eventos
+            botaoReiniciar.style.display = 'block'; // Mostra o botão de reiniciar
+        }
+
+        function reiniciarBalao() {
+            tamanhoAtual = 50; // Reseta o tamanho para o valor inicial
+            balao.textContent = '🎈'; // Reseta o balão para o emoji de balão
+            balao.style.fontSize = `${tamanhoAtual}px`;
+            document.addEventListener('keydown', controlarBalao); // Reativa o controle do balão
+            botaoReiniciar.style.display = 'none'; // Esconde o botão de reiniciar
+        }
+
+        function controlarBalao(event) {
+            if (event.key === 'ArrowUp') {
+                inflarBalao();
+            } else if (event.key === 'ArrowDown') {
+                desinflarBalao();
+            }
+        }
+
+        document.addEventListener('keydown', controlarBalao);
+        botaoReiniciar.addEventListener('click', reiniciarBalao);
+    </script>
+</body>
+</html>

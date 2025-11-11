@@ -1,0 +1,166 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+!s11e vcom 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/gabri/OneDrive/Área de Trabalho/Lab de lógica/flipflop_jk/simulation/qsim
+T_opt
+!s110 1711375735
+VfIijOfabJURX>1:gkWW=n2
+04 23 16 work flipflop_jk_vhd_vec_tst flipflop_jk_arch 1
+=1-641c67e8d729-66018576-2f1-6ea0
+!s124 OEM10U3 
+o-quiet -auto_acc_if_foreign -work work -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim
+tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+Eflipflop_jk
+Z2 w1711375733
+Z3 DPx11 fiftyfivenm 21 fiftyfivenm_atom_pack 0 22 ]8mk3aDoRCnDHLT[?RH@l1
+Z4 DPx11 fiftyfivenm 22 fiftyfivenm_components 0 22 mcV[^`BJd<M<VZ]VT36Jn0
+Z5 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z6 DPx6 altera 11 dffeas_pack 0 22 ?LXJY1:Lo@gFD7X:NR80G0
+Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z10 DPx6 altera 28 altera_primitives_components 0 22 YYoQ82]HzeJG>EHgnbGN33
+!i122 2
+R1
+Z11 8flipflop_jk.vho
+Z12 Fflipflop_jk.vho
+l0
+L91 1
+V0O:d@<fFPj`11O8@>HAel0
+!s100 B:aN8Q2B1?JBmWoTXFmb:1
+Z13 OL;C;2021.2;73
+32
+Z14 !s110 1711375734
+!i10b 1
+Z15 !s108 1711375734.000000
+Z16 !s90 -work|work|flipflop_jk.vho|
+Z17 !s107 flipflop_jk.vho|
+!i113 0
+Z18 o-work work
+Z19 tExplicit 1 CvgOpt 0
+Astructure
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+DEx4 work 11 flipflop_jk 0 22 0O:d@<fFPj`11O8@>HAel0
+!i122 2
+l159
+L112 414
+VYRXN7P8XOJ>E0LgPR4GUI1
+!s100 5aB992:mlTR==fnS8oo8Q3
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 0
+R18
+R19
+Eflipflop_jk_vhd_vec_tst
+Z20 w1711375732
+R8
+R9
+!i122 3
+R1
+Z21 8flipflop_jk.vwf.vht
+Z22 Fflipflop_jk.vwf.vht
+l0
+L32 1
+V6^A;Y:Ukj`2VZ3TLKolkY3
+!s100 WE]WZ?i0R;<HkcQ_jRo^O0
+R13
+32
+R14
+!i10b 1
+R15
+Z23 !s90 -work|work|flipflop_jk.vwf.vht|
+Z24 !s107 flipflop_jk.vwf.vht|
+!i113 0
+R18
+R19
+Aflipflop_jk_arch
+R8
+R9
+DEx4 work 23 flipflop_jk_vhd_vec_tst 0 22 6^A;Y:Ukj`2VZ3TLKolkY3
+!i122 3
+l51
+L34 73
+V:CfW]gY9PEJVNm]`;<=C40
+!s100 LGU@^e@X5RC_e1E2eeYBG0
+R13
+32
+R14
+!i10b 1
+R15
+R23
+R24
+!i113 0
+R18
+R19
+Ehard_block
+R2
+R5
+R3
+R7
+R8
+R9
+R4
+!i122 2
+R1
+R11
+R12
+l0
+L35 1
+Vhj[i;a0dD85B`o1JPT^cg2
+!s100 3A]XnMhF<;9mKUe5mn3aM1
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 0
+R18
+R19
+Astructure
+R5
+R3
+R7
+R8
+R9
+R4
+DEx4 work 10 hard_block 0 22 hj[i;a0dD85B`o1JPT^cg2
+!i122 2
+l76
+L54 28
+Va5ClDYec`9chO`Ne0M1NL2
+!s100 >:Wi^nX[YiN=@>>JC6K_83
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 0
+R18
+R19

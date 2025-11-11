@@ -1,0 +1,16 @@
+Resultados:
+Dijkstra de 0 para 0:
+Distância: 0
+Rota: 0
+Tempo de execução: 0.000000 segundos
+
+Bellman-Ford de 0 para 2:
+Distância: 6
+Rota: 2 <- 1 <- 0
+Tempo de execução: 0.000000 segundos
+
+Dijkstra de 0 para 3:
+Distância: 5
+Rota: 3 <- 1 <- 0
+Tempo de execução: 0.000000 segundos
+

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Montanhas</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #e60c0c;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #940d0d;
+        }
+        tr:nth-child(even) {
+            background-color: #e63737;
+        }
+        td.numeric {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h1>Montanhas do Mundo</h1>
+    <div id="mountains"></div>
+
+    <script>
+        // Tornando a função adicionarMontanha acessível no escopo global
+        function adicionarMontanha(nome, altura, local) {
+            const tabela = document.querySelector('#mountains table');
+            const tbody = tabela.querySelector('tbody');
+            const tr = document.createElement('tr');
+            
+            const dados = [nome, altura, local];
+            dados.forEach((dado, index) => {
+                const td = document.createElement('td');
+                td.textContent = dado;
+                
+                if (typeof dado === 'number') {
+                    td.classList.add('numeric');
+                }
+                
+                tr.appendChild(td);
+            });
+            
+            tbody.appendChild(tr);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const MONTANHAS = [
+                {nome : "Kilimanjaro", altura : 5895, local : "Tanzania"},
+                {nome : "Everest", altura : 8848, local : "Nepal"},
+                {nome : "Monte Fuji", altura : 3776, local : "Japan"},
+                {nome : "Vaalserberg", altura : 323, local : "Netherlands"},
+                {nome : "Denali", altura : 6168, local : "USA"},
+                {nome : "Popocatepetl", altura : 5465, local : "Mexico"},
+                {nome : "Mont Blanc", altura : 4808, local : "Italy / France"}
+            ];
+
+            function criarTabela(montanhas) {
+                const tabela = document.createElement('table');
+                
+                const thead = document.createElement('thead');
+                const trHead = document.createElement('tr');
+                const colunas = Object.keys(montanhas[0]);
+                
+                colunas.forEach(coluna => {
+                    const th = document.createElement('th');
+                    th.textContent = coluna.charAt(0).toUpperCase() + coluna.slice(1);
+                    trHead.appendChild(th);
+                });
+                
+                thead.appendChild(trHead);
+                tabela.appendChild(thead);
+                
+                const tbody = document.createElement('tbody');
+                
+                montanhas.forEach(montanha => {
+                    const tr = document.createElement('tr');
+                    
+                    colunas.forEach(coluna => {
+                        const td = document.createElement('td');
+                        td.textContent = montanha[coluna];
+                        
+                        if (typeof montanha[coluna] === 'number') {
+                            td.classList.add('numeric');
+                        }
+                        
+                        tr.appendChild(td);
+                    });
+                    
+                    tbody.appendChild(tr);
+                });
+                
+                tabela.appendChild(tbody);
+                return tabela;
+            }
+
+            document.getElementById('mountains').appendChild(criarTabela(MONTANHAS));
+        });
+
+        // Tornar a função adicionarMontanha acessível globalmente
+        window.adicionarMontanha = adicionarMontanha;
+    </script>
+</body>
+</html>

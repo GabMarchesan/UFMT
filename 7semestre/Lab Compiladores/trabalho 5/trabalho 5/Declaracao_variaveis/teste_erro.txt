@@ -1,0 +1,12 @@
+// Este código deve gerar um erro semântico.
+
+var a: int = 100;
+var b: int;
+
+// Redeclaração da variável 'a'
+var a: int = 50; 
+
+{
+  // Uso da variável 'c', que não foi declarada
+  b = a + c; 
+}

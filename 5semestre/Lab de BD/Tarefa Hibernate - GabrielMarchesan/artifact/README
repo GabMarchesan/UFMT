@@ -1,0 +1,16 @@
+Gabriel Gomes Marchesan
+202111722011
+
+---------- Tarefa Hibernate ----------
+
+execução:
+
+1 - entre na pasta do projeto
+2 - src -> main -> resources -> META-INF
+3 - em seguida abra o persistence.xml e coloque suas informações do mysql
+exemplo:
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="12345678" /> 
+
+4 - salve o arquivo
+5 - vai para main e execute com F5 ou no terminal: mvn compile exec:java

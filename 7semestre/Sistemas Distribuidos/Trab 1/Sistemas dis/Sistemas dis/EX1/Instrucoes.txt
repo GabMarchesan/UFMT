@@ -1,0 +1,58 @@
+apt-get update
+
+apt-get install -f
+
+apt-get install rpcbind
+
+/etc/init.d/rpcbin start
+
+Depois gerar o arquivo .x
+
+depois tem 2 formas
+
+1º- rpcgen -a arquivo.x
+
+depois de editar os arquivos arquivo_server.c e arquivo_client.c 
+
+compilar
+
+gcc arquivo_svc.c arquivo_server.c arquivo_xdr.c -o servidor
+
+gcc arquivo_clnt.c arquivo_client.c arquivo_xdr.c -o cliente
+
+Inicie o servidor
+
+./servidor
+
+Em outro terminal inicie o cliente
+
+./cliente localhost e caso tenha mais argumentos passe aqui
+
+2º forma
+
+rpcgen -a -C arquivo.x
+
+Vá no arquivo Makefile.arquivo e editeo
+
+altere para
+
+CFLAGS += -g -DRPC_SVC_FG
+
+RPCGENFLAGS = -C
+
+depois no terminal
+
+mv Makefile.arquivo makefile
+
+para compilar
+sudo make
+
+Inicie o servidor
+
+./servidor
+
+Em outro terminal inicie o cliente
+
+./cliente localhost e caso tenha mais argumentos passe aqui
+
+

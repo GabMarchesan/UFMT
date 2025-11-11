@@ -1,0 +1,118 @@
+//Implementação dos métodos de ordenação
+//aula 11
+
+
+//Bibliotecas 
+#include <stdio.h>
+#include <stdlib.h>
+
+//definiçao de estrutura 
+struct est_lista{
+    int *lista;
+    int capacidade; // tamanho do vetor
+    int qtd;
+};
+
+//Apelido 
+typedef struct est_lista tipo_lista;
+
+//prototipo de funções 
+void inicializaLista(tipo_lista*, int); //int é o tamanho do vetor
+void insereLista(tipo_lista*, int);
+void imprimeLista(tipo_lista*);
+void mergeSort(tipo_lista*);
+void mergeSortRecursivo(int*,int);
+
+
+//Inicializa lista
+void inicializaLista(tipo_lista *lst, int tamanho){
+    lst->capacidade = tamanho;
+    lst->qtd = 0;
+    //Alocação de memória do vetor
+    lst->lista = (int*) malloc(sizeof(int)*tamanho);
+}
+
+//insere Lista
+void insereLista(tipo_lista *lst, int valor){
+    if (lst->qtd < lst->capacidade){
+        lst->lista[lst->qtd++] = valor;
+    } else {
+        printf("[ATENCAO] lista estah cheia. Nenhum valor serah inserido.\n");
+    }
+}
+
+//Imprime Lista
+void imprimeLista(tipo_lista *lst){
+    printf("LISTA:\n\tCAPACIDADE = %d\n\tQUANTIDADE = %d\n\tLISTA = ", lst->capacidade, lst->qtd, lst->capacidade);
+    for ( int i=0; i< lst->qtd; i++){
+        printf("[%d] ", lst->lista[i]);
+    }
+    printf("\n");
+}
+
+//merge Sort
+void mergeSort(tipo_lista *lst){
+    //funcao principal do mergeSort, a partir dela ocorre a chamada da funcao recursiva, que ira receber o vetor e o tamanho.
+
+    mergeSortRecursivo(lst->lista, lst->qtd);
+
+}
+    
+//merge sort recursivo
+void mergeSortRecursivo(int vetor[], int tamanho){
+    //primeira parte do algoritimo consiste na quebra da lista em 2 partes, ate que nao seja mais possivel a quebra.
+    int i, j, meio, *vet_aux, pos_aux;
+
+    if(tamanho > 1){//Verifica se eh possivel dividir
+        //processo de QUEBRA
+        meio = (int) tamanho / 2;
+        mergeSortRecursivo(&vetor[0], meio); //priemira metade
+        mergeSortRecursivo(&vetor[meio], tamanho-meio); //segunda metade
+
+        //Processo de MERGE
+        //Aloca um vetor auxiliar para montar o vetor resultado do merge
+        vet_aux = (int*) malloc(sizeof(int)*tamanho);
+        i = 0;
+        j = meio;
+        pos_aux = 0;
+
+        //Percorre cada metade do vetor, realizando o merge
+        while ((i < meio) && (j < tamanho)){
+            if(vetor[i] < vetor[j]){
+                vet_aux[pos_aux++] = vetor[i++];
+            } else {
+                vet_aux[pos_aux++] = vetor[j++];
+            }
+        }
+
+        //Verifica se uma das sub-listas foi finalizada e copia
+        while ( i < meio){
+            vet_aux[pos_aux++] = vetor[i++];
+        }
+        while ( j < tamanho){
+            vet_aux[pos_aux++] = vetor[j++];
+        }
+        //Copia o vetor auxiliar para o vetor original
+        for (i=0; i<tamanho; i++){
+            vetor[i] = vet_aux[i];
+        }
+        free(vet_aux); //libera memoria do vetor auxiliar
+    }
+}
+int main(){
+    int i;
+    tipo_lista minha_lista;
+    inicializaLista(&minha_lista, 10);
+
+    srand(1);
+
+    for (i=0; i<10; i++)
+        insereLista(&minha_lista, rand()%100);
+
+    imprimeLista(&minha_lista);
+
+    printf("Ordenacao pelo metodo Merge sort:\n");
+    mergeSort(&minha_lista);
+    imprimeLista(&minha_lista);
+    
+}

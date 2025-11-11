@@ -1,0 +1,19 @@
+// Um teste completo para o compilador.
+
+var resultado: int;
+var val_a: int = 20;
+var val_b: int = 5;
+var val_c: int = 2;
+
+// Testa a declaracao de float
+var pi: float = 3.14; 
+
+{
+  // A expressao abaixo deve calcular:
+  // 1. (val_a - val_b) -> (20 - 5) = 15
+  // 2. (15) * val_c    -> 15 * 2 = 30
+  // 3. 30 + 10         -> 40
+  // O valor final de 'resultado' deve ser 40.
+  
+  resultado = (val_a - val_b) * val_c + 10;
+}

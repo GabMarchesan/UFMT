@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}Buscar Música{% endblock %}
+
+{% block page_content %}
+<h1>Buscar Música</h1>
+<form id="music-form" class="mt-3">
+    <div class="form-group">
+        <input type="text" name="music" id="music" class="form-control" placeholder="Digite o nome da música" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+<div id="music-info" class="mt-5" style="display: none;">
+    <h3 id="music-title"></h3>
+    <p><strong>Ano:</strong> <span id="music-year"></span></p>
+    <p><strong>Artistas:</strong> <span id="music-artists"></span></p>
+    <img id="music-poster" src="" alt="Imagem da música" style="max-width: 200px;" class="mt-3">
+    <audio id="music-preview" controls class="mt-3">
+        <source id="music-preview-src" src="" type="audio/mpeg">
+        Seu navegador não suporta a reprodução de áudio.
+    </audio>
+    
+    {% if current_user.is_authenticated %}
+        <button id="favorite-btn" class="btn btn-warning mt-3" style="display: none;">Favoritar</button>
+        <div id="favorite-message" class="mt-2" style="display: none;"></div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.getElementById('music-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const musicTitle = document.getElementById('music').value;
+
+        fetch('/music', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `music=${encodeURIComponent(musicTitle)}`
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert(data.error);
+                document.getElementById('music-info').style.display = 'none'; // Esconde informações anteriores em caso de erro
+            } else {
+                document.getElementById('music-info').style.display = 'block';
+                document.getElementById('music-title').innerText = data.titulo;
+                document.getElementById('music-year').innerText = data.ano || 'N/A';
+                document.getElementById('music-artists').innerText = data.artistas || 'N/A';
+                document.getElementById('music-poster').src = data.poster_url || '';
+                document.getElementById('music-preview-src').src = data.preview_url || '';
+                document.getElementById('music-preview').load();
+
+                // Exibe o botão de favoritar apenas se o usuário estiver autenticado
+                {% if current_user.is_authenticated %}
+                const favoriteBtn = document.getElementById('favorite-btn');
+                favoriteBtn.style.display = 'block';
+                favoriteBtn.onclick = function() {
+                    fetch(`/favorite/music/${data.id}`, { method: 'POST' })
+                    .then(response => response.json())
+                    .then(data => {
+                        const favoriteMessage = document.getElementById('favorite-message');
+                        if (data.message) {
+                            favoriteMessage.innerText = data.message;
+                            favoriteMessage.style.display = 'block';
+                        }
+                    });
+                };
+                {% endif %}
+            }
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            alert('Ocorreu um erro ao buscar a música.');
+        });
+    });
+</script>
+{% endblock %}

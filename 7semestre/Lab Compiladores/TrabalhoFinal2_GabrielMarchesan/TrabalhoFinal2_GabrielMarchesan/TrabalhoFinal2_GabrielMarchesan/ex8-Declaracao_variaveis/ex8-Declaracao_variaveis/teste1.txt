@@ -1,0 +1,49 @@
+float total;
+float media;
+bool impar;
+string empresa;
+
+float soma(float a, float b);
+int main(); // <<-- CORREÇÃO: Adicione o protótipo da main aqui
+
+float soma(float a, float b) {
+    return (a + b);
+}
+
+int main() {
+    string nome;
+    float x;
+    float y;
+
+    empresa = "UFMT";
+    write("Escreva seu nome:");
+    read(nome);
+    read(x);
+    read(y);
+    total = soma(x, y);
+    media = total / 2;
+    impar = 0; 
+
+    while (total > 0) {
+        if (impar == 0) {
+            impar = 1;
+        } else {
+            impar = 0;
+        }
+        total = total - 1;
+    }
+
+    write(empresa);
+    write(nome);
+    write("Sua media eh:");
+    write(media);
+    write("Seu numero eh ");
+
+    if (impar == 1) {
+        write("impar");
+    } else {
+        write("par");
+    }
+
+    return 0;
+}

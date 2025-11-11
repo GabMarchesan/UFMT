@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Perfil de {{ user.username }}{% endblock %}
+
+{% block page_content %}
+<h1>Perfil de {{ user.username }}</h1>
+
+<div>
+    <p><strong>Usuário:</strong> {{ user.username }}</p>
+    <h2>Músicas Favoritas</h2>
+    <ul>
+        {% for music in favorites %}
+            <li>{{ music.titulo }} - <strong>Artistas:</strong> {{ music.artistas }}</li>
+        {% else %}
+            <li>Nenhuma música favorita.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

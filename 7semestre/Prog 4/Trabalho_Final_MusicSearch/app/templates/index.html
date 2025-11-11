@@ -1,0 +1,11 @@
+{% extends "base.html"%}
+{%block title%}Musica{%endblock%}
+{%block page_content%}
+"Descubra a Batida Certa para Cada Momento! 🎶
+Entre e explore o mundo da música como nunca antes! Busque suas músicas favoritas, descubra novos artistas e curta uma experiência personalizada com nosso sistema de favoritos. Aqui você pode encontrar desde clássicos até os mais recentes lançamentos, tudo em um só lugar.
+Clique em Buscar para começar sua jornada musical e crie uma playlist só sua com um simples toque! Deixe-se levar pelo som e faça da música sua melhor companhia. Vamos encontrar a trilha sonora perfeita para hoje?"
+{% if current_user.is_authenticated %}
+{{ current_user.username }}
+{% else %}
+{% endif %}!
+{%endblock%}

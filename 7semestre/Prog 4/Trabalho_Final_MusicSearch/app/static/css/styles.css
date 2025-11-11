@@ -1,0 +1,160 @@
+/* CSS Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1d1f27;
+    color: #f1f1f1;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #ff6f61;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.navbar .nav-link:hover {
+    color: #ffe3dc;
+    text-decoration: underline;
+}
+
+.navbar .dropdown-menu {
+    background-color: #ff6f61;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+    color: #ffffff;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover {
+    background-color: #ff927e;
+}
+
+/* Títulos */
+.page-header h1, .page-header h2 {
+    color: #ff6f61;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Mensagens de alerta */
+.alert {
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Links e botões chamativos */
+a, .btn, .dropdown-item {
+    color: #ffffff;
+    background-color: #ff6f61;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+a:hover, .btn:hover, .dropdown-item:hover {
+    background-color: #ff927e;
+    color: #ffffff;
+}
+
+/* Caixa de busca */
+#busca-container {
+    background-color: #2e303c;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#busca-container input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    border: 2px solid #ff6f61;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+#busca-container button {
+    background-color: #ff6f61;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#busca-container button:hover {
+    background-color: #ff927e;
+}
+
+/* Cartão de Música */
+.music-card {
+    background-color: #2e303c;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.music-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.music-card img {
+    border-radius: 5px;
+    max-width: 100px;
+    float: left;
+    margin-right: 20px;
+}
+
+.music-card h3 {
+    color: #ff6f61;
+    margin-bottom: 10px;
+}
+
+.music-card p {
+    color: #f1f1f1;
+}
+
+.music-card .btn {
+    margin-top: 10px;
+    background-color: #ff6f61;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #ff6f61;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

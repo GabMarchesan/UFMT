@@ -1,0 +1,39 @@
+-- Exercício 1 lista 3
+
+> [1,2,3] 
+resultado: [1,2,3]
+
+> [0,2,'a']
+resultado: erro de tipo
+
+> [1,2,3] == [2,1,3]
+resultado: False, pois as listas não são iguais
+
+> [1 .. 60]
+resultado: Imprime uma lista contendo números de 1 a 60
+
+> [1,4 .. 60]
+resultado: Imprime uma lista de 1 a 60, contado em 3 em 3, então no final conta de 1 á 58
+
+> [0.1,0.2 .. 0.9]
+resultado: Imprime uma lista de 0.1 á 0.9, contado de 0.1 em 0.1
+
+> [0.1 .. 9]
+resultado: Imprime uma lista de 0.1 á 9, contado de 1 em 1, logo [0.1,1.1 .. 9.1]
+
+> ["apartamento",['c','a','s','a']]
+resultado: ["apartamento","casa"]
+
+>[('a',3),('b',4),('c',5)]
+resultado: [('a',3),('b',4),('c',5)]
+
+> ['a','b',['c','d']] /= ['a','b','c','d']
+resultado: error:
+    • Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    • In the expression: ['c', 'd']
+      In the first argument of ‘(/=)’, namely ‘['a', 'b', ['c', 'd']]’
+      In the expression: ['a', 'b', ['c', 'd']] /= ['a', 'b', 'c', 'd']
+
+> sum [1..10]
+resultado: 55
+

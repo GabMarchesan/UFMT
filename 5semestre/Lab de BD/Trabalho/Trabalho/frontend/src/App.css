@@ -1,0 +1,461 @@
+:root {
+  --vermelho-escuro: #a4161a;
+  --vermelho-claro: #e5383b;
+  --branco: #ffffff;
+  --cinza-claro: #b1a7a6;
+  --cinza-escuro: #161a1d;
+  --verde-escuro: #0f9d58;
+  --azul: #34b7f1;
+  --amarelo: #f4c20d;
+  --roxo-escuro: #58147f;
+  --roxo-claro: #ad35f1;
+}
+
+.color-roxo-escuro {
+    color: var(--roxo-escuro);
+}
+
+.color-roxo-claro {
+    color: var(--roxo-claro);
+}
+
+.color-vermelho-escuro {
+    color: var(--vermelho-escuro);
+}
+
+.color-vermelho-claro {
+    color: var(--vermelho-claro);
+}
+
+.color-branco {
+    color: var(--branco);
+}
+
+.color-cinza-claro {
+    color: var(--cinza-claro);
+}
+
+.color-cinza-escuro {
+    color: var(--cinza-escuro);
+}
+
+.color-verde-escuro {
+    color: var(--verde-escuro);
+}
+
+.color-azul {
+    color: var(--azul);
+}
+
+.color-amarelo {
+    color: var(--amarelo);
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-image: url("../public/fundo.jpg");
+  z-index: -1;
+  opacity: 0.16;
+}
+
+.header-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--branco);
+  cursor: pointer;
+}
+
+.header-subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--branco);
+  cursor: pointer;
+}
+
+.header {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  background-color: var(--roxo-escuro);
+  box-shadow: 0px 0px 5px 0px var(--cinza-claro);
+  
+}
+
+.header-home {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  background-color: var(--roxo-escuro);
+  box-shadow: 0px 0px 5px 0px var(--cinza-claro);
+
+  display: flex;                   /* 🔹 transforma em flex container */
+  justify-content: space-between;  /* 🔹 joga título à esquerda e botões à direita */
+  align-items: center;             /* 🔹 alinha verticalmente no centro */
+  padding: 0 20px;                 /* 🔹 dá um espaçamento lateral */
+}
+
+.header-icon {
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--branco);
+}
+
+.screen {
+  height: 100vh;
+  background: transparent;
+}
+
+.white-button {
+  border: none;
+  font-size: 1.0rem;
+  font-weight: 500;
+  color: var(--roxo-escuro);
+  background-color: var(--branco);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.red-button {
+  border: none;
+  font-size: 1.0rem;
+  font-weight: 500;
+  color: var(--branco);
+  background-color: var(--roxo-escuro);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.main {
+  position: fixed;
+  width: 100%;
+  top: 75px;
+  height: calc(100% - 75px);
+  background-color: transparent;
+  overflow-y: auto;
+}
+
+.main_login {
+  position: relative; /* Alterado de fixed para relativo */
+  width: 100%;
+  top: 75px; /* Ajusta para ficar abaixo do header */
+  height: calc(100% - 75px);
+  background-color: transparent;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo */
+  max-width: 1200px; /* Limita a largura máxima */
+  margin: 0 auto; /* Centraliza o main */
+  padding: 0 1rem; /* Adiciona padding para evitar bordas coladas */
+}
+
+.card {
+  height: fit-content;
+  background-color: var(--branco);
+  border-radius: 10px !important;
+  box-shadow: 0px 0px 10px 0px var(--cinza-claro);
+}
+
+.cadastro-card {
+  max-width: 43rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cinza-escuro);
+}
+
+.card-subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--cinza-escuro);
+}
+
+.card-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--cinza-escuro);
+}
+
+.card-input, .card-select {
+  border: 2px solid var(--cinza-claro);
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.card-input:focus, .card-select:focus {
+  border: 2px solid var(--roxo-escuro);
+  border-radius: 10px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.card-link {
+  color: var(--roxo-escuro);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.profile-circle {
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--branco);
+  cursor: pointer;
+  background-image: url("../public/icon.webp");
+  background-size: 100%;
+}
+
+.profile-options {
+  position: fixed;
+  top: 72px;
+  right: 0;
+  width: 200px;
+  background-color: var(--branco);
+  box-shadow: 0px 0px 5px 0px var(--cinza-claro);
+  border-radius: 5px;
+}
+
+.profile-options-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.search-bar {
+  max-width: 400px;
+  background-color: var(--branco);
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+.search-bar-input {
+  background-color: var(--branco);
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.search-bar-input:focus {
+  outline: none;
+}
+
+.search-icon {
+  font-size: 1.2rem;
+  color: var(--roxo-escuro);
+}
+
+.cart {
+  position: absolute;
+  top: 72px;
+  right: 0;
+  width: 350px;
+  background-color: var(--branco);
+  height: calc(100% - 72px);
+  box-shadow: 0px 2px 5px 0px var(--cinza-claro);
+  border-radius: 5px;
+}
+
+.cart-card {
+  width: 100%;
+  height: calc(100% - 50px);
+}
+
+.cart-icon {
+  cursor: pointer;
+  color: var(--roxo-escuro);
+}
+
+.cart-item {
+  border-bottom: 1px solid var(--cinza-claro);
+}
+
+.cart-itens {    
+  overflow-y: auto;
+}
+
+.menu-item {
+  max-width: 250px;
+  border-radius: 7px;
+  background-color: var(--branco);
+  box-shadow: 0px 0px 5px 0px var(--cinza-claro);
+}
+
+.menu-item-desc {
+  overflow: auto;
+}
+
+.menu-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.item-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.item-status {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.item-observacao {
+  border: 1px solid var(--cinza-claro);
+  border-radius: 5px;
+  font-size: medium;
+}
+
+.item-observacao:focus {
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--cinza-claro);
+  border-radius: 10px;
+}
+
+.pedido-item {
+  background-color: var(--branco);
+  box-shadow: 0px 0px 5px 0px var(--cinza-claro);
+  border-radius: 10px;
+}
+
+.add-item-cardapio-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--roxo-escuro);
+}
+
+.menu-item-disp {
+  color: var(--verde-escuro);
+  font-size: large;
+  font-weight: bold;
+}
+
+.menu-item-indisp {
+  color: var(--roxo-escuro);
+  font-size: large;
+  font-weight: bold;
+}
+
+.image-container {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem;
+}
+
+.item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Novo estilo para o conteúdo da home */
+.home-content {
+  background-color: rgba(88, 20, 127, 0.8); /* var(--roxo-escuro) com opacidade */
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  color: var(--branco);
+}
+
+.home-content h1 {
+  font-size: 3rem;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.home-content p {
+  font-size: 1.2rem;
+  margin: 0 0 20px 0;
+  font-weight: 500;
+}
+
+.home-content .btn {
+  background-color: var(--roxo-claro);
+  color: var(--branco);
+  padding: 15px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.home-content .btn:hover {
+  background-color: #8a2be2; /* Tom mais escuro de roxo para hover */
+}
+
+
+.login-card {
+  width: 50%;
+  max-width: 600px;
+  min-width: 350px;
+  max-height: 90vh;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-right: 50px;
+  padding: 2rem 2rem 2.5rem 2rem; /* 🔹 mais espaço no topo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.login-logo {
+  width: 160px;     /* menor que antes */
+  height: auto;
+  margin-top: 10px; /* 🔹 afasta do topo do card */
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1024px) {
+  .login-card {
+    width: 50%;
+    max-width: 400px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    padding: 1.5rem;
+  }
+}
+
+/* Em telas pequenas (celular) */
+@media (max-width: 768px) {
+  .login-card {
+    width: 90%;
+    max-width: 400px;
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,41 @@
+|flipflop_jk
+clk => ffd:d_ff_inst.clk
+clk => d_reg[0].CLK
+clk => d_reg[1].CLK
+clk => d_reg[2].CLK
+clk => d_reg[3].CLK
+reset => d_reg[0].ACLR
+reset => d_reg[1].ACLR
+reset => d_reg[2].ACLR
+reset => d_reg[3].ACLR
+j => process_0.IN0
+j => process_0.IN0
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN1
+k => process_0.IN1
+q[0] <= ffd:d_ff_inst.q[0]
+q[1] <= ffd:d_ff_inst.q[1]
+q[2] <= ffd:d_ff_inst.q[2]
+q[3] <= ffd:d_ff_inst.q[3]
+
+
+|flipflop_jk|ffd:d_ff_inst
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+reset => q[0]~reg0.ACLR
+reset => q[1]~reg0.ACLR
+reset => q[2]~reg0.ACLR
+reset => q[3]~reg0.ACLR
+d[0] => q[0]~reg0.DATAIN
+d[1] => q[1]~reg0.DATAIN
+d[2] => q[2]~reg0.DATAIN
+d[3] => q[3]~reg0.DATAIN
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

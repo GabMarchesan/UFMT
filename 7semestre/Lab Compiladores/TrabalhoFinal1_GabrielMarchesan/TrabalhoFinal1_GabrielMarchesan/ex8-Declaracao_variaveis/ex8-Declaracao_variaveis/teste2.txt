@@ -1,0 +1,8 @@
+int x;
+
+{
+    write("Digite um numero:");
+    read(x);
+    write("Voce digitou o numero:");
+    write(x);
+}

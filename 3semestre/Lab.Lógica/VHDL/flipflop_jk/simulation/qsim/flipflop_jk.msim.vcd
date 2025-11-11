@@ -1,0 +1,423 @@
+$comment
+	File created using the following command:
+		vcd file flipflop_jk.msim.vcd -direction
+$end
+$date
+	Mon Mar 25 11:08:55 2024
+$end
+$version
+	Questa Intel Starter FPGA Edition Version 2021.2
+$end
+$timescale
+	1ps
+$end
+
+$scope module flipflop_jk_vhd_vec_tst $end
+$var wire 1 ! clk $end
+$var wire 1 " j $end
+$var wire 1 # k $end
+$var wire 1 $ q [3] $end
+$var wire 1 % q [2] $end
+$var wire 1 & q [1] $end
+$var wire 1 ' q [0] $end
+$var wire 1 ( reset $end
+
+$scope module i1 $end
+$var wire 1 ) vcc $end
+$var wire 1 * devoe $end
+$var wire 1 + devclrn $end
+$var wire 1 , devpor $end
+$var wire 1 - ww_devoe $end
+$var wire 1 . ww_devclrn $end
+$var wire 1 / ww_devpor $end
+$var wire 1 0 ww_clk $end
+$var wire 1 1 ww_reset $end
+$var wire 1 2 ww_j $end
+$var wire 1 3 ww_k $end
+$var wire 1 4 ww_q [3] $end
+$var wire 1 5 ww_q [2] $end
+$var wire 1 6 ww_q [1] $end
+$var wire 1 7 ww_q [0] $end
+$var wire 1 8 \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ [4] $end
+$var wire 1 9 \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ [3] $end
+$var wire 1 : \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ [2] $end
+$var wire 1 ; \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ [1] $end
+$var wire 1 < \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ [0] $end
+$var wire 1 = \clk~inputclkctrl_INCLK_bus\ [3] $end
+$var wire 1 > \clk~inputclkctrl_INCLK_bus\ [2] $end
+$var wire 1 ? \clk~inputclkctrl_INCLK_bus\ [1] $end
+$var wire 1 @ \clk~inputclkctrl_INCLK_bus\ [0] $end
+$var wire 1 A \~QUARTUS_CREATED_GND~I_combout\ $end
+$var wire 1 B \~QUARTUS_CREATED_UNVM~~busy\ $end
+$var wire 1 C \~QUARTUS_CREATED_ADC1~~eoc\ $end
+$var wire 1 D \~QUARTUS_CREATED_ADC2~~eoc\ $end
+$var wire 1 E \q[0]~output_o\ $end
+$var wire 1 F \q[1]~output_o\ $end
+$var wire 1 G \q[2]~output_o\ $end
+$var wire 1 H \q[3]~output_o\ $end
+$var wire 1 I \clk~input_o\ $end
+$var wire 1 J \clk~inputclkctrl_outclk\ $end
+$var wire 1 K \j~input_o\ $end
+$var wire 1 L \k~input_o\ $end
+$var wire 1 M \d_reg~0_combout\ $end
+$var wire 1 N \reset~input_o\ $end
+$var wire 1 O \d_ff_inst|q[0]~feeder_combout\ $end
+$var wire 1 P \d_ff_inst|q[1]~feeder_combout\ $end
+$var wire 1 Q \d_ff_inst|q[2]~feeder_combout\ $end
+$var wire 1 R \d_ff_inst|q[3]~feeder_combout\ $end
+$var wire 1 S \d_ff_inst|q\ [3] $end
+$var wire 1 T \d_ff_inst|q\ [2] $end
+$var wire 1 U \d_ff_inst|q\ [1] $end
+$var wire 1 V \d_ff_inst|q\ [0] $end
+$var wire 1 W d_reg [3] $end
+$var wire 1 X d_reg [2] $end
+$var wire 1 Y d_reg [1] $end
+$var wire 1 Z d_reg [0] $end
+$var wire 1 [ \ALT_INV_reset~input_o\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+0(
+1)
+1*
+1+
+1,
+1-
+1.
+1/
+00
+01
+02
+03
+0A
+zB
+zC
+zD
+0E
+0F
+0G
+0H
+0I
+0J
+0K
+0L
+0M
+0N
+0O
+0P
+0Q
+0R
+1[
+0S
+0T
+0U
+0V
+xW
+xX
+xY
+0Z
+1=
+1>
+1?
+0@
+08
+09
+0:
+0;
+0<
+0$
+0%
+0&
+0'
+04
+05
+06
+07
+$end
+#50000
+1!
+10
+1I
+1@
+1J
+#100000
+0!
+1#
+00
+13
+0I
+1L
+0@
+0J
+#150000
+1!
+1"
+10
+12
+1I
+1K
+1@
+1M
+1J
+1Z
+0M
+1O
+1P
+1Q
+1R
+#200000
+0!
+0#
+00
+03
+0I
+0L
+0@
+1M
+0J
+#250000
+1!
+10
+1I
+1@
+1J
+1V
+1U
+1T
+1S
+1E
+1F
+1G
+1H
+17
+16
+15
+14
+1'
+1&
+1%
+1$
+#300000
+0!
+1#
+0"
+00
+13
+02
+0I
+1L
+0K
+0@
+0M
+0J
+#350000
+1!
+10
+1I
+1@
+1J
+0Z
+0O
+0P
+0Q
+0R
+#400000
+0!
+0#
+00
+03
+0I
+0L
+0@
+0J
+#450000
+1!
+1"
+10
+12
+1I
+1K
+1@
+1M
+1J
+1Z
+0V
+0U
+0T
+0S
+0E
+0F
+0G
+0H
+1O
+1P
+1Q
+1R
+07
+06
+05
+04
+0'
+0&
+0%
+0$
+#500000
+0!
+1#
+00
+13
+0I
+1L
+0@
+0M
+0J
+#550000
+1!
+10
+1I
+1@
+1J
+0Z
+1V
+1U
+1T
+1S
+1E
+1F
+1G
+1H
+1M
+0O
+0P
+0Q
+0R
+17
+16
+15
+14
+1'
+1&
+1%
+1$
+#600000
+0!
+0#
+0"
+00
+03
+02
+0I
+0L
+0K
+0@
+0M
+0J
+#650000
+1!
+10
+1I
+1@
+1J
+0V
+0U
+0T
+0S
+0E
+0F
+0G
+0H
+07
+06
+05
+04
+0'
+0&
+0%
+0$
+#700000
+0!
+1#
+00
+13
+0I
+1L
+0@
+0J
+#750000
+1!
+1"
+10
+12
+1I
+1K
+1@
+1M
+1J
+1Z
+0M
+1O
+1P
+1Q
+1R
+#800000
+0!
+0#
+00
+03
+0I
+0L
+0@
+1M
+0J
+#850000
+1!
+10
+1I
+1@
+1J
+1V
+1U
+1T
+1S
+1E
+1F
+1G
+1H
+17
+16
+15
+14
+1'
+1&
+1%
+1$
+#900000
+0!
+1#
+0"
+00
+13
+02
+0I
+1L
+0K
+0@
+0M
+0J
+#950000
+1!
+10
+1I
+1@
+1J
+0Z
+0O
+0P
+0Q
+0R
+#1000000

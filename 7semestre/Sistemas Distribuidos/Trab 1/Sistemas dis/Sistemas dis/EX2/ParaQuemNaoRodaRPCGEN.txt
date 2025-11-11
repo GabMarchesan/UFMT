@@ -1,0 +1,4 @@
+sudo apt update
+sudo apt install libtirpc-dev rpcbind
+gcc -g -I/usr/include/tirpc -o ex_server ex_server.c ex_svc.c -ltirpc
+gcc -g -I/usr/include/tirpc -o ex_client ex_client.c ex_clnt.c -ltirpc
